@@ -6,10 +6,10 @@ unzip data.zip
 rm data.zip
 
 echo "Preprocess the raw data"
-python3.6 trim_names.py -f data/freebase-FB2M.txt -n data/FB5M.name.txt
+python3.6 KEQA_WSDM19/trim_names.py -f data/freebase-FB2M.txt -n data/FB5M.name.txt
 
 echo "Create processed, augmented dataset...\n"
-python3.6 augment_process_dataset.py -d data/
+python3.6 KEQA_WSDM19/augment_process_dataset.py -d data/
 
 
 echo "Embed the Knowledge Graph:\n"
@@ -26,11 +26,11 @@ rm -r KGembed
 echo "We could runn train_detection.py, train_entity.py, train_pred.py simultaneously"
 
 echo "Head Entity Detection (HED) model, train and test the model..."
-python3.6 train_detection.py --entity_detection_mode LSTM --fix_embed --gpu 0
+python3.6 KEQA_WSDM19/train_detection.py --entity_detection_mode LSTM --fix_embed --gpu 0
 
 echo "Entity representation learning..."
-python3.6 train_entity.py --qa_mode GRU --fix_embed --gpu 0
-python3.6 train_pred.py --qa_mode GRU --fix_embed --gpu 0
+python3.6 KEQA_WSDM19/train_entity.py --qa_mode GRU --fix_embed --gpu 0
+python3.6 KEQA_WSDM19/train_pred.py --qa_mode GRU --fix_embed --gpu 0
 
 echo "We have to run train_detection.py, train_entity.py, train_pred.py first, before running test_main.py..."
-python3.6 test_main.py --gpu 0
+python3.6 KEQA_WSDM19/test_main.py --gpu 0
