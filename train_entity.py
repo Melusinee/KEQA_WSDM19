@@ -16,7 +16,7 @@ parser.add_argument('--qa_mode', type=str, required=True, help='options are GRU,
 parser.add_argument('--embed_dim', type=int, default=250)
 parser.add_argument('--no_cuda', action='store_false', help='do not use cuda', dest='cuda')
 parser.add_argument('--gpu', type=int, default=0)  # Use -1 for CPU
-parser.add_argument('--epochs', type=int, default=30)
+parser.add_argument('--epochs', type=int, default=3)
 parser.add_argument('--batch_size', type=int, default=32)
 parser.add_argument('--lr', type=float, default=0.0002)
 parser.add_argument('--seed', type=int, default=3435)
