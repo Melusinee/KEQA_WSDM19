@@ -13,7 +13,7 @@ parser = ArgumentParser(description="Joint Prediction")
 parser.add_argument('--entity_detection_mode', type=str, required=True, help='options are GRU, LSTM')
 parser.add_argument('--no_cuda', action='store_false', help='do not use cuda', dest='cuda')
 parser.add_argument('--gpu', type=int, default=0)  # Use -1 for CPU
-parser.add_argument('--epochs', type=int, default=30)
+parser.add_argument('--epochs', type=int, default=3)
 parser.add_argument('--batch_size', type=int, default=16)
 parser.add_argument('--lr', type=float, default=.0003)
 parser.add_argument('--seed', type=int, default=3435)
